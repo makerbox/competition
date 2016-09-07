@@ -1,0 +1,23 @@
+<%= simple_form_for(@entry) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :email %>
+    <%= f.input :full_name %>
+    <%= f.input :address_line_1 %>
+    <%= f.input :address_line_2 %>
+    <%= f.input :postcode %>
+    <%= f.input :phone %>
+    <%= f.input :store_name %>
+    <%= f.input :terminal_number %>
+    <%= f.input :receipt_number %>
+    <%= f.input :sale_date %>
+    <%= f.input :sale_time %>
+    <%= f.input :birth_year %>
+    <%= f.input :subscribe %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @entry.email %>
+</p>
+
+<p>
+  <strong>Full name:</strong>
+  <%= @entry.full_name %>
+</p>
+
+<p>
+  <strong>Address line 1:</strong>
+  <%= @entry.address_line_1 %>
+</p>
+
+<p>
+  <strong>Address line 2:</strong>
+  <%= @entry.address_line_2 %>
+</p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @entry.postcode %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @entry.phone %>
+</p>
+
+<p>
+  <strong>Store name:</strong>
+  <%= @entry.store_name %>
+</p>
+
+<p>
+  <strong>Terminal number:</strong>
+  <%= @entry.terminal_number %>
+</p>
+
+<p>
+  <strong>Receipt number:</strong>
+  <%= @entry.receipt_number %>
+</p>
+
+<p>
+  <strong>Sale date:</strong>
+  <%= @entry.sale_date %>
+</p>
+
+<p>
+  <strong>Sale time:</strong>
+  <%= @entry.sale_time %>
+</p>
+
+<p>
+  <strong>Birth year:</strong>
+  <%= @entry.birth_year %>
+</p>
+
+<p>
+  <strong>Subscribe:</strong>
+  <%= @entry.subscribe %>
+</p>
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>
