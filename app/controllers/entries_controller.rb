@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:index, :edit, :destroy]
   # GET /entries
   # GET /entries.json
   def index
