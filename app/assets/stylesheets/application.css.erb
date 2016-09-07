@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+	margin:0;
+	padding:0;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+.container {
+	position:absolute;
+	top:0;
+	width:100%;
+	min-height:100%;
+	margin:0;
+	padding:0;
+	height:auto;
+	background-image:url(<%= asset_path 'background.png' %>);
+	background-size:cover;
+	text-align:center;
+}
+.entryform{
+	margin:auto;
+	width:50%;
+	text-align:left;
+	padding:5em;
+	background: #917240;
+	-webkit-box-shadow: 0px -62px 128px 2px rgba(255,255,255,0.48);
+-moz-box-shadow: 0px -62px 128px 2px rgba(255,255,255,0.48);
+box-shadow: 0px -62px 128px 2px rgba(255,255,255,0.48);
+margin-top:45vw;
+border:1px solid #debd64;
+}
