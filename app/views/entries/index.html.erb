@@ -2,7 +2,7 @@
 
 <h1>Entries</h1>
 
-<table>
+<table class="table table-striped" style="background:#FFF;">
   <thead>
     <tr>
       <th>Email</th>
@@ -38,14 +38,9 @@
         <td><%= entry.sale_time %></td>
         <td><%= entry.birth_year %></td>
         <td><%= entry.subscribe %></td>
-        <td><%= link_to 'Show', entry %></td>
-        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
-        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete entry', entry, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Entry', new_entry_path %>
