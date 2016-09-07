@@ -1,6 +1,9 @@
 class EntriesController < ApplicationController
+
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:index, :edit, :destroy]
+
+
   # GET /entries
   # GET /entries.json
   def index
@@ -28,7 +31,7 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
+        format.html { redirect_to good_entry_path, notice: 'Entry was successfully created.' }
         format.json { render :show, status: :created, location: @entry }
       else
         format.html { render :new }
