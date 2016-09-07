@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap-datetimepicker
  */
 
 body {
@@ -34,13 +35,43 @@ body {
 .entryform{
 	margin:auto;
 	width:50%;
-	text-align:left;
-	padding:5em;
+padding:1em;
 	background: #917240;
 	-webkit-box-shadow: 0px -62px 128px 2px rgba(255,255,255,0.48);
 -moz-box-shadow: 0px -62px 128px 2px rgba(255,255,255,0.48);
 box-shadow: 0px -62px 128px 2px rgba(255,255,255,0.48);
 margin-top:45vw;
-margin-bottom:45vw;
+margin-bottom:15vw;
 border:1px solid #debd64;
+color: #FFF;
+}
+
+h1{
+font-size:23pt;
+margin:auto;
+max-width:67%;
+margin-top: 2em;
+margin-bottom:2em;
+}
+
+.form-inputs {
+		text-align:left;
+	max-width:46%;
+	margin:auto;
+}
+.datetimepicker .input-group-btn {
+	position:absolute;
+}
+.datetimepicker .input-group-btn, .datetimepicker .btn{
+	    border: none;
+    background: transparent;
+    box-shadow: none;
+}
+.entry_sale_date, .entry_sale_time {
+	display:inline-block;
+	max-width: 49%;
+}
+#entry_sale_date, #entry_sale_time {
+padding-left:3em;
+border-radius:4px;
 }

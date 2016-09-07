@@ -11,13 +11,17 @@
     <%= f.input :store_name %>
     <%= f.input :terminal_number %>
     <%= f.input :receipt_number %>
-    <%= f.input :sale_date %>
-    <%= f.input :sale_time %>
+    <%= f.input :sale_date, as: :date_picker, placeholder: 'dd/mm/yyyy' %>
+    <%= f.input :sale_time, as: :time_picker, placeholder: 'HH:MM' %>
     <%= f.input :birth_year %>
-    <%= f.input :subscribe %>
+    <%= f.input :subscribe, label: 'I would like to receive email communication from Ali Baba in future.' %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, 'Enter to WIN' %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+    $('.datetimepicker').datetimepicker();
+</script>
