@@ -4,9 +4,9 @@
   <div class="form-inputs">
     <%= f.input :email %>
     <%= f.input :full_name %>
-    <%= f.input :address_line_1 %>
-    <%= f.input :address_line_2 %>
-    <%= f.input :postcode %>
+    <%= f.input :address_line_1, label: 'Address', placeholder: 'Address line 1' %>
+    <%= f.input :address_line_2, label: false, placeholder: 'Address line 2' %>
+    <%= f.input :postcode, label: false, placeholder: 'Postcode' %>
     <%= f.input :phone %>
     <%= f.input :store_name %>
     <%= f.input :terminal_number %>
