@@ -17,6 +17,36 @@ class EntriesController < ApplicationController
 
   # GET /entries/new
   def new
+    @locations = ['Belconnen Lakes',
+'Belconnen Mall' ,
+'Blacktown'   ,
+'Browns  Plains'  ,
+'Canberra  Centre  Upstairs',
+'Canberra  Centre  Downstairs',
+'Dickson'   ,
+'Eastlands'   ,
+'Erindale'    ,
+'Fountain  Gate'  ,
+'Frankston'   ,
+'Fyshwick'    ,
+'Goulburn'    ,
+'Green Hills' ,
+'Gunghalin'   ,
+'Highpoint'   ,
+'Kawana  Waters'  ,
+'Lake  Haven' ,
+'Lismore'   ,
+'Liverpool'   ,
+'Macquarie'   ,
+'Melbourne Airport', 
+'Moorebank'   ,
+'Morayfield'  ,  
+'Mt  Druitt'  ,
+'Mt  Ommaney' ,
+'Narellan' ,   
+'Nudgee',    
+'Penrith',   
+'Phillip','Queanbeyan','Robina','Salamander  Bay','Sunshine  Plaza','Tuggerah','Tuggeranong','Warriewood','Warringah','Watergardens','Woden']
     @entry = Entry.new
   end
 

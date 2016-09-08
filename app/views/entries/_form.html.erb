@@ -8,7 +8,7 @@
     <%= f.input :address_line_2, label: false, placeholder: 'Address line 2' %>
     <%= f.input :postcode, label: false, placeholder: 'Postcode' %>
     <%= f.input :phone %>
-    <%= f.input :store_name %>
+    <%= f.input :store_name, :collection => @locations, :include_blank => false %>
     <%= f.input :terminal_number %>
     <%= f.input :receipt_number %>
     <%= f.input :sale_date, as: :date_picker, placeholder: 'dd/mm/yyyy' %>
