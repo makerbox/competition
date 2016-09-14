@@ -8,6 +8,10 @@ class EntriesController < ApplicationController
   # GET /entries.json
   def index
     @entries = Entry.all
+    respond_to do |format|
+      format.html
+      format.csv { send_data @entries.to_csv, filename: "alibaba-entries-#{Date.today}.csv" }
+    end
   end
 
   # GET /entries/1
