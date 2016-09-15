@@ -1,4 +1,9 @@
 <div class="entryform">
+<% if @notification %>
+<div id="notification">
+<%= @notification %>
+</div>
+<% end %>
 <h1>Enter the unique information from your valid purchase receipt below for a chance to win!</h1>
 <%= render 'form', entry: @entry %>
 <div class="disclaimer">

@@ -4,6 +4,10 @@ class EntriesController < ApplicationController
   
   before_action :authenticate_user!, only: [:index, :edit, :destroy]
 
+  def good
+    @notification = "Success - thank you for your entry!"
+    redirect_to new_entry_path(@notification)
+  end
 
   # GET /entries
   # GET /entries.json
