@@ -43,13 +43,16 @@ body {
 	padding:0;
 	height:auto;
 	background-image:url(<%= asset_path 'background2.png' %>);
-	background-size:cover;
+	background-size:contain;
+	background-repeat:no-repeat;
 	background-position: center top;
 	text-align:center;
 	z-index:1;
 }
 .entryform{
 	line-height:2em;
+	position:relative;
+	z-index:3;
 	margin:auto;
 	width:50%;
 padding:1em;
@@ -58,7 +61,7 @@ padding-bottom:4vw;
 	-webkit-box-shadow: 0px -62px 128px 2px rgba(255,255,255,0.48);
 -moz-box-shadow: 0px -62px 128px 2px rgba(255,255,255,0.48);
 box-shadow: 0px -62px 128px 2px rgba(255,255,255,0.48);
-margin-top:48%;
+margin-top:37%;
 margin-bottom:15vw;
 border:1px solid #debd64;
 color: #FFF;
@@ -154,6 +157,11 @@ input.btn.btn-default{
 	}
 }
 @media screen and (max-device-width:900px){
+	.container2{
+		width:100%;
+		left:0;
+		background-size:cover;
+	}
 .entryform{
 	width:79%;
 	margin-top:74%;
