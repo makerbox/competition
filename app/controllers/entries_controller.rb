@@ -70,7 +70,7 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to good_entries_path, notice: 'Entry was successfully created.' }
+        format.html { redirect_to new_entry_path, notice: 'Entry was successfully submitted.' }
         format.json { render :show, status: :created, location: @entry }
       else
         format.html { render :new }
