@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'thankyou/index'
+
   get 'terms/index'
 
   devise_for :users

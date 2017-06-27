@@ -364,7 +364,7 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to new_entry_path, notice: 'Entry was successfully submitted.' }
+        format.html { redirect_to thankyou_index_path, notice: 'Entry was successfully submitted.' }
         format.json { render :show, status: :created, location: @entry }
       else
         format.html { render :new }
@@ -405,6 +405,6 @@ class EntriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def entry_params
-      params.require(:entry).permit(:email, :full_name, :address_line_1, :address_line_2, :postcode, :phone, :store_name, :terminal_number, :receipt_number, :sale_date, :sale_time, :birth_year, :subscribe)
+      params.require(:entry).permit(:email, :full_name, :first_name, :last_name, :address_line_1, :address_line_2, :postcode, :phone, :store_name, :terminal_number, :receipt_number, :sale_date, :sale_time, :birth_year, :product, :receipt, :subscribe)
     end
 end

@@ -18,7 +18,11 @@
   </head>	
 
   <body>	
+  <% if controller_name == 'thankyou' %>
+    <div class="thankscontainer">
+  <% else %>
     <div class="container">
+  <% end %>
       <div class="container2">
       </div>
         <%= yield %>

@@ -1,6 +1,9 @@
 class Entry < ApplicationRecord
-	  validates :email, :first_name, :last_name, :address_line_1, :postcode, :phone, :store_name, :receipt_number, :sale_date, :product, presence: true
- 
+	  validates :email, :first_name, :last_name, :address_line_1, :postcode, :phone, :store_name, :receipt_number, :sale_date, :product, :receipt, presence: true
+ # attr_accessible :receipt
+
+mount_uploader :receipt, ReceiptUploader
+
  def self.to_csv
     attributes = %w{id email full_name address_line_1 postcode phone store_name receipt_number sale_date subscribe}
 

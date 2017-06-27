@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dk62rqvu7
+  api_key: '342266497375383'
+  api_secret: eIs2f-Lb9n9DhVPyB8KwTbwzmvY
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dk62rqvu7
+  api_key: '342266497375383'
+  api_secret: eIs2f-Lb9n9DhVPyB8KwTbwzmvY
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dk62rqvu7
+  api_key: '342266497375383'
+  api_secret: eIs2f-Lb9n9DhVPyB8KwTbwzmvY
+  enhance_image_tag: true
+  static_image_support: false

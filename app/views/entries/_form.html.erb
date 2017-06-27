@@ -13,6 +13,7 @@
     <%= f.input :receipt_number %>
     <%= f.input :sale_date, as: :date_picker, placeholder: 'dd/mm/yyyy', label: 'Date of Purchase' %>
     <%= f.input :product, :collection => @tyres, :include_blank => false, :prompt => "Type of Tyres Purchased" %>
+    <%= f.input :receipt, label: 'Upload Receipt' %>
     <%= f.input :subscribe, label: 'I would like to receive email communication from Yokohama in future.' %>
   </div>
 
