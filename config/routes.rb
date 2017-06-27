@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'terms/index'
+
   devise_for :users
   resources :entries
   resources :entries do
