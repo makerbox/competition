@@ -9,12 +9,9 @@
     <%= f.input :postcode, label: false, placeholder: 'Postcode' %>
     <%= f.input :phone %>
     <%= f.input :store_name, :collection => @locations, :include_blank => false, :prompt => "Choose Store" %>
-    <%= f.input :terminal_number %>
     <%= f.input :receipt_number %>
-    <%= f.input :sale_date, as: :date_picker, placeholder: 'dd/mm/yyyy' %>
-    <%= f.input :sale_time, as: :time_picker, placeholder: 'HH:MM' %>
-    <%= f.input :birth_year, placeholder: 'Must be over 18 years to enter' %>
-    <%= f.input :subscribe, label: 'I would like to receive email communication from Ali Baba in future.' %>
+    <%= f.input :sale_date, as: :date_picker, placeholder: 'dd/mm/yyyy', label: 'Date of Purchase' %>
+    <%= f.input :subscribe, label: 'I would like to receive email communication from Yokohama in future.' %>
   </div>
 
   <div class="form-actions">
