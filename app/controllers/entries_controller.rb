@@ -26,6 +26,7 @@ class EntriesController < ApplicationController
 
   # GET /entries/new
   def new
+    @tyres = ["4WD/SUV Tyres", "Passenger/Car Tyres", "Light Truck Tyres", "Other"]
     @locations = ["A1 Mobile Tyres",
 "A1 Tyrepower",
 "A1 Tyres & More",
