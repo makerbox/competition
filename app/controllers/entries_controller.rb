@@ -15,7 +15,7 @@ class EntriesController < ApplicationController
     @entries = Entry.all
     respond_to do |format|
       format.html
-      format.csv { send_data @entries.to_csv, filename: "alibaba-entries-#{Date.today}.csv" }
+      format.csv { send_data @entries.to_csv, filename: "yokohama-entries-#{Date.today}.csv" }
     end
   end
 
@@ -364,6 +364,7 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.save
+        
         format.html { redirect_to thankyou_index_path, notice: 'Entry was successfully submitted.' }
         format.json { render :show, status: :created, location: @entry }
       else
