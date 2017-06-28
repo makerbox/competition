@@ -35,7 +35,7 @@
         <td><%= entry.store_name %></td>
         <td><%= entry.receipt_number %></td>
         <td><%= entry.product %></td>
-        <td><a href="#{entry.receipt}">receipt</a></td>
+        <td><a href="<%= entry.receipt %>">receipt</a></td>
         <td><%= entry.sale_date %></td>
         <td><%= entry.subscribe %></td>
         <td><%= link_to 'Delete entry', entry, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
