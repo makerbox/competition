@@ -361,10 +361,9 @@ class EntriesController < ApplicationController
   # POST /entries.json
   def create
     @entry = Entry.new(entry_params)
-    CongratsMailer.congrats(@entry).deliver_now
+    CongratsMailer.congrats_mailer(@entry).deliver_now
     respond_to do |format|
       if @entry.save
-
         format.html { redirect_to thankyou_index_path, notice: 'Entry was successfully submitted.' }
         format.json { render :show, status: :created, location: @entry }
       else
