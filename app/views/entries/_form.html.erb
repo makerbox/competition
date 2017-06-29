@@ -13,7 +13,23 @@
     <%= f.input :receipt_number %>
     <%= f.input :sale_date, as: :date_picker, placeholder: 'dd/mm/yyyy', label: 'Date of Purchase' %>
     <%= f.input :product, :collection => @tyres, :include_blank => false, :prompt => "Type of Tyres Purchased" %>
-    <%= f.input :receipt, label: 'Upload Receipt' %>
+
+<!-- file uploader hidden, styled, and js'ed -->
+<div class="control-group">
+  <div class="attach-set">
+    <%= f.input :receipt, input_html: { hidden: true }, label: 'Upload Receipt' %>
+    <div class="input-append">
+    <a id="upload-btn" class="btn"><i class="icon-upload-alt"></i>Choose file</a>
+    <input id="file-display" class="input-large uneditable-input" type="text">
+    </div>
+  </div>
+</div>
+<script>
+
+
+</script>
+<!-- end file uploader -->
+
     <%= f.input :subscribe, label: 'I would like to receive email communication from Yokohama in future.' %>
   </div>
 

@@ -18,8 +18,10 @@
   </head>	
 
   <body>	
-  <% if controller_name == 'thankyou' %>
+  <% if (controller_name == 'thankyou') %>
     <div class="thankscontainer">
+  <% elsif (controller_name == 'terms') %>
+    <div class="termscontainer">
   <% else %>
     <div class="container">
   <% end %>

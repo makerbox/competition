@@ -27,7 +27,7 @@ border:none;
 }
 
 
-.container {
+.container, .termscontainer {
 	position:absolute;
 	top:0;
 	width:100%;
@@ -88,7 +88,7 @@ margin-bottom:15vw;
 border:1px solid #debd64;
 color: #FFF;
 }
-.thankscontainer .entryform{
+.thankscontainer .entryform, .termscontainer .entryform{
 	margin-top:25vh;
 	background:#FFFFFF;
 	color:#000000 !important;
@@ -159,9 +159,7 @@ label, .disclaimer {
 #entry_sale_date, #entry_sale_time {
 padding-left:3em;
 }
-.boolean{
-	font-size: 13.9pt;
-}
+
 
 #new_user{
 	background: #FFF;
@@ -184,9 +182,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa504', end
 	font-size: 15.9pt;
 }
 input[type=file]{
+	display:none;
+}
+.input-append{
+	color:#000;
 	background: #FFF;
 	height:3em;
 	width:100%;
+}
+#upload-btn{
+	height:2.25em;
+	margin:.25em;
+	background:#CCC;
+	color:#000;
+	border-radius:10px;
+}
+#file-display{
+	width:calc(100% - 10em);
+	border:none;
 }
 #notice {
     color: #00cccc;
@@ -196,6 +209,13 @@ input[type=file]{
 #new_user, .table, .btn{
 	position:relative;
 	z-index:5;
+}
+.boolean{
+	font-size: 13.9pt;
+}
+#entry_subscribe{
+	width:1em;
+	height:1em;
 }
 @media screen and (min-width:901px){
 	.container2{
@@ -210,7 +230,8 @@ input[type=file]{
 		/*background-size:cover;	*/
 	}
 .entryform{
-	width:79%;
+	width:95vw;
+	min-width:0;
 	margin-top:50vmin;
 }
 }

@@ -1,7 +1,7 @@
 class CongratsMailer < ApplicationMailer
-	  default from: 'competition@yokohama.com'
+	  default from: 'Yokohama Austalia <competition@yokohama.com>'
 
   	def congrats_mailer(entry)
-		mail(to: entry.email, subject: 'your entry has been received')
+		mail(to: entry.email, subject: 'Your Entry Has Been Received')
 	end
 end
