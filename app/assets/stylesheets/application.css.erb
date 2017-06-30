@@ -15,7 +15,8 @@
  *= require bootstrap-datetimepicker
  */
 
-body {
+body, html {
+	overflow-x:hidden;
 	margin:0;
 	padding:0;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -83,7 +84,7 @@ padding-bottom:4vw;
 	-webkit-box-shadow: 0px 0px 128px 2px rgba(255,255,255,0.48);
 -moz-box-shadow: 0px 0px 128px 2px rgba(255,255,255,0.48);
 box-shadow: 0px 0px 128px 2px rgba(255,255,255,0.48);
-margin-top:43vmax;
+margin-top:27vmax;
 margin-bottom:15vw;
 border:1px solid #debd64;
 color: #FFF;
@@ -110,6 +111,7 @@ label, .disclaimer {
 .form-control {
 	height:3em;
 }
+
 .form-inputs, .form-actions, .disclaimer, .disclaimer2, hr {
 		text-align:left;
 	max-width:31em;
@@ -248,6 +250,16 @@ input[type=file]{
 .entryform{
 	width:95vw;
 	min-width:0;
-	margin-top:50vmin;
+	margin-top:65vmin;
+}
+.container{
+	background-size:250vw;
+}
+.form-control, .input-append {
+	height:2em;
+	font-size:22pt;
+}
+label {
+	font-size:22pt;
 }
 }
