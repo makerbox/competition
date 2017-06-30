@@ -12,6 +12,7 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
+    lists
     @entries = Entry.all
     respond_to do |format|
       format.html
@@ -26,7 +27,68 @@ class EntriesController < ApplicationController
 
   # GET /entries/new
   def new
-    @tyres = ["4WD/SUV Tyres", "Passenger/Car Tyres", "Light Truck Tyres", "Other"]
+    lists
+    @entry = Entry.new
+  end
+
+  # GET /entries/1/edit
+  def edit
+  end
+
+  # POST /entries
+  # POST /entries.json
+  def create
+    @entry = Entry.new(entry_params)
+    
+    respond_to do |format|
+      if @entry.save
+        CongratsMailer.congrats_mailer(@entry).deliver_now
+        format.html { redirect_to thankyou_index_path, notice: 'Entry was successfully submitted.' }
+        format.json { render :show, status: :created, location: @entry }
+      else
+        format.html { render :new }
+        format.json { render json: @entry.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /entries/1
+  # PATCH/PUT /entries/1.json
+  def update
+    respond_to do |format|
+      if @entry.update(entry_params)
+        format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
+        format.json { render :show, status: :ok, location: @entry }
+      else
+        format.html { render :edit }
+        format.json { render json: @entry.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /entries/1
+  # DELETE /entries/1.json
+  def destroy
+    @entry.destroy
+    respond_to do |format|
+      format.html { redirect_to entries_url, notice: 'Entry was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_entry
+      @entry = Entry.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def entry_params
+      params.require(:entry).permit(:email, :full_name, :first_name, :last_name, :address_line_1, :address_line_2, :postcode, :phone, :store_name, :terminal_number, :receipt_number, :sale_date, :sale_time, :birth_year, :product, :receipt, :subscribe)
+    end
+
+    def lists
+         @tyres = ["4WD/SUV Tyres", "Passenger/Car Tyres", "Light Truck Tyres", "Other"]
     @locations = ["A1 Mobile Tyres",
 "A1 Tyrepower",
 "A1 Tyres & More",
@@ -350,61 +412,5 @@ class EntriesController < ApplicationController
 "Willetton Tyrepower",
 "Wise Choice Tyres & More",
 "World Of Tyres"]
-    @entry = Entry.new
-  end
-
-  # GET /entries/1/edit
-  def edit
-  end
-
-  # POST /entries
-  # POST /entries.json
-  def create
-    @entry = Entry.new(entry_params)
-    CongratsMailer.congrats_mailer(@entry).deliver_now
-    respond_to do |format|
-      if @entry.save
-        format.html { redirect_to thankyou_index_path, notice: 'Entry was successfully submitted.' }
-        format.json { render :show, status: :created, location: @entry }
-      else
-        format.html { render :new }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /entries/1
-  # PATCH/PUT /entries/1.json
-  def update
-    respond_to do |format|
-      if @entry.update(entry_params)
-        format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
-        format.json { render :show, status: :ok, location: @entry }
-      else
-        format.html { render :edit }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /entries/1
-  # DELETE /entries/1.json
-  def destroy
-    @entry.destroy
-    respond_to do |format|
-      format.html { redirect_to entries_url, notice: 'Entry was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_entry
-      @entry = Entry.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def entry_params
-      params.require(:entry).permit(:email, :full_name, :first_name, :last_name, :address_line_1, :address_line_2, :postcode, :phone, :store_name, :terminal_number, :receipt_number, :sale_date, :sale_time, :birth_year, :product, :receipt, :subscribe)
     end
 end
